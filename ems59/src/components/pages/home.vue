@@ -30,13 +30,6 @@ export default {
         SideBar
     },
     beforeCreate() {
-        // // 得到 token
-        // var token = window.localStorage.getItem('token')
-        // if (!token) {
-        //     this.$router.push('/login')
-        //     this.$message.error('您还没有登录，请先登录')
-        //     return
-        // }
     }
 }
 </script>

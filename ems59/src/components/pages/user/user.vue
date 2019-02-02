@@ -1,22 +1,10 @@
 <template>
     <el-card>
         <!-- 面包屑导航 -->
-        <!-- 
-                                                            el-breadcrumb
-                                                                separator-class：设置面包屑导航之间的分隔符号
-                                                            el-breadcrumb-item：导航
-                                                                to: 跳转的路径
-                                                        -->
-        <!-- <el-breadcrumb separator-class="el-icon-more">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-            <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-        </el-breadcrumb> -->
+    
         <MyBread firstnav="用户管理" lastnav="用户列表" />
         <!-- 搜索框 -->
-        <!-- 
-                                                            el-input：
-                                                        -->
+       
         <el-row class="search">
             <el-col :span="8">
                 <el-input placeholder="请输入内容" v-model="search" class="input-with-select">
@@ -29,13 +17,7 @@
             </el-col>
         </el-row>
         <!-- 表格区域 -->
-        <!-- 
-                                                            el-table:
-                                                                data: 绑定的数据源
-                                                                border：设置边框
-                                                            el-table-column：表格中的一列 
-                                                                prop: 从数据源中得到 date 属性
-                                                        -->
+      
         <el-table :data="dataList" border style="width: 100%">
             <el-table-column type="index"></el-table-column>
             <el-table-column prop="username" label="姓名">
@@ -61,25 +43,11 @@
             </el-table-column>
         </el-table>
         <!-- 分页组件 -->
-        <!-- 
-                                                            el-pagination：
-                                                                size-change事件：当页容器改变时触发
-                                                                current-change事件：当从一页跳转到另一页时触发
-                                                                current-page：当前页
-                                                                page-sizes：页容器
-                                                                page-size: 页容量
-                                                                layout：分页组件的布局
-                                                                total：数据总条数
-                                                         -->
+     
         <el-pagination @current-change="currentChange" @size-change="sizeChange" :current-page="pagenum" :page-sizes="[5, 10]" :page-size="pagesize" layout="total, sizes, prev, pager, next, jumper" :total="total">
         </el-pagination>
         <!-- 新增的弹框区域 -->
-        <!-- 
-                                                    el-dialog：弹出的对话框
-                                                        title：标题
-                                                        visible.sync：控制对话框是否显示
-                                                    
-                                                 -->
+     
         <el-dialog title="新增用户" :visible.sync="addDialog">
             <el-form ref="myform" :model="addObj" label-position="right">
                 <el-form-item label="用户名" label-width="100px">

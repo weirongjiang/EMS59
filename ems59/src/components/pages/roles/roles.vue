@@ -50,19 +50,7 @@
         </el-table>
         <!-- 分配权限面板 -->
         <el-dialog title="分配权限" :visible.sync="roleDialog">
-            <!-- 
-                                el-tree: 树状组件
-                                    props：设置树状组件的内容：
-                                        lable: 显示的文本
-                                        children：子元素的数据
-                                    load：设置是否为懒加载
-                                    show-checkbox：显示多选框
-                                    check-change事件：当选项发生改变时触发
-                                    data: 当前树状组件的数据源
-                                    node-key：给当元素绑定一个唯一标识
-                                    default-expand-all：默认展开所有节点
-                                    default-checked-keys: 默认选中节点的 key 集合
-                             -->
+      
             <el-tree ref="mytree" :default-expand-all="true" :default-checked-keys="defaultCheck" :data="rightList" node-key="id" :props="props" show-checkbox>
             </el-tree>
             <div slot="footer" class="dialog-footer">

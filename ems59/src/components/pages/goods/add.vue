@@ -6,9 +6,7 @@
         <el-alert class="myalert" title="添加商品信息" type="info" center show-icon>
         </el-alert>
         <!-- 步骤条 -->
-        <!-- 
-            active：当前步骤条进度
-         -->
+       
         <el-steps class="mystep" :active="active" align-center finish-status="success">
             <el-step title="基本信息"></el-step>
             <el-step title="商品参数"></el-step>
@@ -17,10 +15,7 @@
             <el-step title="商品内容"></el-step>
         </el-steps>
         <!-- tab 栏 -->
-        <!-- 
-            tab-position：tab 栏标题的位置
-            tab-click事件：
-         -->
+      
         <el-tabs @tab-click="tabclick" tab-position="left">
             <el-tab-pane label="基本信息">
                 <el-form label-position="top" :model="addObj" status-icon class="demo-ruleForm">
@@ -37,12 +32,7 @@
                         <el-input v-model="addObj.age"></el-input>
                     </el-form-item>
                     <el-form-item label="商品分类">
-                        {{ cascaderValue }}
-                        <!-- 
-                                    expand-trigger：设置扩展子元素的方式
-                                    options：设置数据源
-                                    v-model：绑定选中的值（数组）
-                                 -->
+                     
                         <el-cascader :props="props" expand-trigger="hover" :options="cateList" v-model="cascaderValue">
                         </el-cascader>
                     </el-form-item>
