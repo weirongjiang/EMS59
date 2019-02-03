@@ -29,8 +29,6 @@ export default {
         Top,
         SideBar
     },
-    beforeCreate() {
-    }
 }
 </script>
 
