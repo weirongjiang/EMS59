@@ -7,6 +7,8 @@ import User from '@/components/pages/user/user.vue'
 import Rights from '@/components/pages/rights/rights.vue'
 import Roles from '@/components/pages/roles/roles.vue'
 
+// 单独引用 message
+import { Message } from 'element-ui'
 
 Vue.use(Router)
 
@@ -48,4 +50,22 @@ var router = new Router({
     }
   ]
 })
-
+// 添加一个前置导航守卫
+//  这句代码会在路由发生改变之前执行，如果不调用 next 方法，后续的代码不会执行
+router.beforeEach((to, from, next) => {
+  // 在判断时，需要将 login 路由排除掉
+  if (to.path !== '/login') {
+    // 判断用户是否登录:验证 token
+    var token = window.localStorage.getItem('token')
+    if (!token) {
+      // 提示用户没有登录
+      Message.error('您还没有登录，请先登录')
+      router.push('/login')
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})
+export default router

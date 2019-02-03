@@ -16,6 +16,8 @@ import '@/assets/css/index.css'
 Vue.use(myaxios)
 Vue.use(ElementUI)
 
+Vue.component(Bread.name, Bread)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
