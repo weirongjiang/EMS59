@@ -6,7 +6,11 @@ import Home from '@/components/pages/home.vue'
 import User from '@/components/pages/user/user.vue'
 import Rights from '@/components/pages/rights/rights.vue'
 import Roles from '@/components/pages/roles/roles.vue'
-
+import Goods from '@/components/pages/goods/goods.vue'
+import GoodsAdd from '@/components/pages/goods/add.vue'
+import Categories from '@/components/pages/categories/categories.vue'
+import Orders from '@/components/pages/orders/orders.vue'
+import Reports from '@/components/pages/reports/reports.vue'
 // 单独引用 message
 import { Message } from 'element-ui'
 
@@ -45,6 +49,26 @@ var router = new Router({
         {
           path: '/roles',
           component: Roles
+        },
+        {
+          path: '/goods',
+          component: Goods
+        },
+        {
+          path: '/goods/add',
+          component: GoodsAdd
+        },
+        {
+          path: '/categories',
+          component: Categories
+        },
+        {
+          path: '/orders',
+          component: Orders
+        },
+        {
+          path: '/reports',
+          component: Reports
         }
       ]
     }
